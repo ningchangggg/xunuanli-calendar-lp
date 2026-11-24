@@ -158,7 +158,7 @@ body = f'''
 </section>
 '''
 html = f'''<!doctype html>
-<html lang="zh-Hant"><head><meta charset="utf-8"><title>煦暖曆落地頁 v6</title>
+<html lang="zh-Hant"><head><meta charset="utf-8"><title>煦暖曆落地頁 v7</title>
 <style>
 {css}
 {EXTRA}
