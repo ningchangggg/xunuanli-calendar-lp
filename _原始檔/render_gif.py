@@ -10,16 +10,18 @@ async def main():
         await pg.goto('file://'+D+'/page.html'); await pg.wait_for_timeout(800); await pg.evaluate('document.fonts.ready')
         await pg.evaluate("document.getAnimations().forEach(a=>{a.pause();a.currentTime=600})")
         items=await pg.eval_on_selector_all('[data-clip]','els=>els.map(e=>[e.closest("section").id,e.dataset.clip])')
-        for sec,clip in items:
+        groups={}
+        for sec,clip in items: groups.setdefault(sec,[]).append(clip)
+        for sec,clips in groups.items():
             if sel and sec not in sel: continue
             od=f'{FR}/{sec}'; shutil.rmtree(od,ignore_errors=True); os.makedirs(od)
-            files=sorted(os.listdir(f'{D}/gif/clips/{clip}'))
-            caps=json.load(open(f'{D}/gif/caps_{clip}.json')) if os.path.exists(f'{D}/gif/caps_{clip}.json') else None
-            for i,f in enumerate(files):
-                url=f'gif/clips/{clip}/{f}'
-                await pg.evaluate('''async ([c,u,t])=>{const im=new Image();im.src=u;await im.decode();document.querySelector(`[data-clip="${c}"]`).style.backgroundImage=`url(${u})`;if(t!==null){document.querySelector(`[data-caps="${c}"]`).innerHTML=t};await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)))}''',[clip,url,caps[i] if caps else None])
+            n=len(os.listdir(f'{D}/gif/clips/{clips[0]}'))
+            caps={c:json.load(open(f'{D}/gif/caps_{c}.json')) for c in clips if os.path.exists(f'{D}/gif/caps_{c}.json')}
+            for i in range(n):
+                upd=[[c,f'gif/clips/{c}/{sorted(os.listdir(f"{D}/gif/clips/{c}"))[i]}',caps[c][i] if c in caps else None] for c in clips]
+                await pg.evaluate('''async (U)=>{for(const [c,u,t] of U){const im=new Image();im.src=u;await im.decode();document.querySelector(`[data-clip="${c}"]`).style.backgroundImage=`url(${u})`;if(t!==null){document.querySelector(`[data-caps="${c}"]`).innerHTML=t}};await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)))}''',upd)
                 await pg.locator('#'+sec).screenshot(path=f'{od}/{i+1:03d}.png')
-            print(sec,clip,len(files),flush=True)
+            print(sec,clips,n,flush=True)
         if not sel or 's03b' in sel:
             od=f'{FR}/s03b'; shutil.rmtree(od,ignore_errors=True); os.makedirs(od)
             for i in range(25):

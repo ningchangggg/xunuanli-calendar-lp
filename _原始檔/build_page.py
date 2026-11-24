@@ -43,13 +43,15 @@ EXTRA = '''
 .wr figcaption{font-size:12.5px;color:#F3EEE5;text-align:center;margin-top:7px;letter-spacing:.06em;white-space:nowrap}
 #s09 .tip{font-size:12.5px;color:#B9C2CE;text-align:center;margin-top:18px;letter-spacing:.06em}
 /* 10 六色 */
-#s10 .g6{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:0 16px;margin-top:20px}
+#s10 .g6{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:0 16px;margin-top:12px}
+.kind6{display:flex;align-items:baseline;justify-content:center;gap:8px;margin:18px auto 0;width:max-content;background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 18px 6px;box-shadow:0 3px 10px rgba(30,27,25,.08)}
+.kind6 b{font-size:17px;color:var(--ink);letter-spacing:.14em}.kind6 .en{font-size:9.5px;color:var(--brick);letter-spacing:.22em}
 #s10 .g6 figure{margin:0;background:#fff;border-radius:4px;overflow:hidden;box-shadow:0 4px 12px rgba(30,27,25,.1)}
 #s10 .g6 .im{height:124px;background-size:cover;background-position:center}
 #s10 .g6 figcaption{font-size:13px;color:var(--ink);text-align:center;padding:7px 0 8px;letter-spacing:.08em}
 #s10 .g6 figcaption small{display:block;font-family:"Helvetica Neue",Arial;font-size:9px;color:var(--taupe);letter-spacing:.16em;margin-top:2px}
 #s12 .ph{height:540px}
-#s11 .ph{height:500px;background-position:center 20%}
+#s11 .ph{height:360px;background-position:center 80%}
 #s12 .tx{top:30px;bottom:auto}#s12 .shade{top:0;bottom:auto;height:240px;background:linear-gradient(rgba(20,16,12,.55),transparent)}
 '''
 
@@ -103,7 +105,8 @@ for side, y, n, t in LB:
 W = [('w1', 'Queenie Kao'), ('w2', '周慕姿'), ('w3', '喬心誌'), ('w4', '林達陽'), ('w5', '沈希默'), ('w6', '知寒'), ('w7', '連俞涵'), ('w8', '陳繁齊')]
 wr = ''.join(f'<figure><div class="im" style="background-image:url(img/{a}.jpg)"></div><figcaption>{b}</figcaption></figure>' for a, b in W)
 C6 = [('c1', '餘燼', 'EMBER'), ('c2', '暮槿', 'DUSK'), ('c3', '亞麻', 'LINEN'), ('c4', '靜灣', 'BAY'), ('c5', '藤花', 'WISTERIA'), ('c6', '初瀨', 'SHOAL')]
-g6 = ''.join(f'<figure><div class="im" style="background-image:url(img/{a}.jpg)"></div><figcaption>{b}<small>{e}</small></figcaption></figure>' for a, b, e in C6)
+g6 = ''.join(f'<figure><div class="im" data-clip="x_{a}" style="background-image:url(gif/clips/x_{a}/001.jpg)"></div><figcaption>{b}<small>{e}</small></figcaption></figure>' for a, b, e in C6)
+capc = json.load(open(f'{D}/gif/caps_x_c1.json'))[0]
 
 body = f'''
 <section id="s03">
@@ -149,6 +152,7 @@ body = f'''
   <div class="eyebrow">年度代表色</div>
   <h2>六款顏色，<br>挑一個明年的代表色</h2>
   <div class="lead">經典款由上往下撕、底座款可替換立架</div>
+  <div class="kind6" data-caps="x_c1">{capc}</div>
   <div class="g6">{g6}</div>
   <div class="nt">實拍色彩依螢幕顯示略有差異</div>
 </section>
@@ -168,7 +172,7 @@ body = f'''
 </section>
 '''
 html = f'''<!doctype html>
-<html lang="zh-Hant"><head><meta charset="utf-8"><title>煦暖曆落地頁 v8</title>
+<html lang="zh-Hant"><head><meta charset="utf-8"><title>煦暖曆落地頁 v9</title>
 <style>
 {css}
 {EXTRA}

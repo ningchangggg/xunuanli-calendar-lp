@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-Hant"><head><meta charset="utf-8"><title>煦暖曆落地頁 v8</title>
+<html lang="zh-Hant"><head><meta charset="utf-8"><title>煦暖曆落地頁 v9</title>
 <style>
 
 @font-face{font-family:Cream;src:url(fonts_cream.otf)}
@@ -250,13 +250,15 @@ h2{font-size:27px;line-height:1.38;color:var(--ink);text-align:center;letter-spa
 .wr figcaption{font-size:12.5px;color:#F3EEE5;text-align:center;margin-top:7px;letter-spacing:.06em;white-space:nowrap}
 #s09 .tip{font-size:12.5px;color:#B9C2CE;text-align:center;margin-top:18px;letter-spacing:.06em}
 /* 10 六色 */
-#s10 .g6{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:0 16px;margin-top:20px}
+#s10 .g6{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:0 16px;margin-top:12px}
+.kind6{display:flex;align-items:baseline;justify-content:center;gap:8px;margin:18px auto 0;width:max-content;background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 18px 6px;box-shadow:0 3px 10px rgba(30,27,25,.08)}
+.kind6 b{font-size:17px;color:var(--ink);letter-spacing:.14em}.kind6 .en{font-size:9.5px;color:var(--brick);letter-spacing:.22em}
 #s10 .g6 figure{margin:0;background:#fff;border-radius:4px;overflow:hidden;box-shadow:0 4px 12px rgba(30,27,25,.1)}
 #s10 .g6 .im{height:124px;background-size:cover;background-position:center}
 #s10 .g6 figcaption{font-size:13px;color:var(--ink);text-align:center;padding:7px 0 8px;letter-spacing:.08em}
 #s10 .g6 figcaption small{display:block;font-family:"Helvetica Neue",Arial;font-size:9px;color:var(--taupe);letter-spacing:.16em;margin-top:2px}
 #s12 .ph{height:540px}
-#s11 .ph{height:500px;background-position:center 20%}
+#s11 .ph{height:360px;background-position:center 80%}
 #s12 .tx{top:30px;bottom:auto}#s12 .shade{top:0;bottom:auto;height:240px;background:linear-gradient(rgba(20,16,12,.55),transparent)}
 
 </style></head><body>
@@ -320,7 +322,8 @@ h2{font-size:27px;line-height:1.38;color:var(--ink);text-align:center;letter-spa
   <div class="eyebrow">年度代表色</div>
   <h2>六款顏色，<br>挑一個明年的代表色</h2>
   <div class="lead">經典款由上往下撕、底座款可替換立架</div>
-  <div class="g6"><figure><div class="im" style="background-image:url(img/c1.jpg)"></div><figcaption>餘燼<small>EMBER</small></figcaption></figure><figure><div class="im" style="background-image:url(img/c2.jpg)"></div><figcaption>暮槿<small>DUSK</small></figcaption></figure><figure><div class="im" style="background-image:url(img/c3.jpg)"></div><figcaption>亞麻<small>LINEN</small></figcaption></figure><figure><div class="im" style="background-image:url(img/c4.jpg)"></div><figcaption>靜灣<small>BAY</small></figcaption></figure><figure><div class="im" style="background-image:url(img/c5.jpg)"></div><figcaption>藤花<small>WISTERIA</small></figcaption></figure><figure><div class="im" style="background-image:url(img/c6.jpg)"></div><figcaption>初瀨<small>SHOAL</small></figcaption></figure></div>
+  <div class="kind6" data-caps="x_c1"><b>經典款</b><span class="en">CLASSIC</span></div>
+  <div class="g6"><figure><div class="im" data-clip="x_c1" style="background-image:url(gif/clips/x_c1/001.jpg)"></div><figcaption>餘燼<small>EMBER</small></figcaption></figure><figure><div class="im" data-clip="x_c2" style="background-image:url(gif/clips/x_c2/001.jpg)"></div><figcaption>暮槿<small>DUSK</small></figcaption></figure><figure><div class="im" data-clip="x_c3" style="background-image:url(gif/clips/x_c3/001.jpg)"></div><figcaption>亞麻<small>LINEN</small></figcaption></figure><figure><div class="im" data-clip="x_c4" style="background-image:url(gif/clips/x_c4/001.jpg)"></div><figcaption>靜灣<small>BAY</small></figcaption></figure><figure><div class="im" data-clip="x_c5" style="background-image:url(gif/clips/x_c5/001.jpg)"></div><figcaption>藤花<small>WISTERIA</small></figcaption></figure><figure><div class="im" data-clip="x_c6" style="background-image:url(gif/clips/x_c6/001.jpg)"></div><figcaption>初瀨<small>SHOAL</small></figcaption></figure></div>
   <div class="nt">實拍色彩依螢幕顯示略有差異</div>
 </section>
 <section id="s11">
