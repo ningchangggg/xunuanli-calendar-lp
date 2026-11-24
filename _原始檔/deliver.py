@@ -20,7 +20,7 @@ for sid, nm, g in SEC:
     else:
         Image.open(f'{D}/sec/{sid}.png').convert('RGB').save(f'{O}/說明圖_1080寬/{nm}.jpg', quality=90)
         names.append((sid, nm + '.jpg', g))
-title = f'幹話曆落地頁 {V}'
+title = f'煦暖曆落地頁 {V}'
 head = f'<!doctype html><html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{title}</title><style>body{{margin:0;background:#888}}main{{max-width:432px;margin:0 auto;background:#fff}}img,video{{display:block;width:100%}}</style><main>'
 dyn = head + '\n'.join(f'<img src="說明圖_1080寬/{n}">' for _, n, _ in names) + '</main>'
 open(f'{O}/{NAME.replace("_照旅行v28規範","")}_整頁預覽_動態.html', 'w').write(dyn)
