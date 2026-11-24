@@ -10,6 +10,11 @@ EXTRA = '''
 @keyframes sweep{0%{left:-40%}55%{left:120%}100%{left:120%}}
 @keyframes tw{0%,100%{opacity:0;transform:scale(.4)}12%{opacity:1;transform:scale(1.15) rotate(20deg)}26%{opacity:0;transform:scale(.4)}}
 #s04 .n{font-size:28px}
+#s03{padding-bottom:0}#s03 .cd:last-child{margin-bottom:0}
+#s03c,#s03d{background:var(--paper2);padding:22px 0 0}#s03d{padding-bottom:20px}#s03c .cd,#s03d .cd{margin-bottom:0}
+.cd .kind{position:absolute;left:50%;top:18px;transform:translateX(-50%);z-index:3;background:rgba(252,250,246,.92);border-radius:20px;padding:5px 16px 6px;display:flex;align-items:baseline;gap:8px;box-shadow:0 4px 12px rgba(30,27,25,.18)}
+.cd .kind b{font-size:17px;color:var(--ink);letter-spacing:.14em}
+.cd .kind .en{font-size:9.5px;color:var(--brick);letter-spacing:.22em}
 /* 05 內頁牆 */
 #s05{background:var(--night);padding:38px 0 0}
 #s05 .eyebrow{color:#E9A493}#s05 h2{color:#fff;margin-top:10px}#s05 .lead{color:#C9C1B5;margin-top:8px;padding:0 16px}
@@ -44,21 +49,27 @@ EXTRA = '''
 #s10 .g6 figcaption{font-size:13px;color:var(--ink);text-align:center;padding:7px 0 8px;letter-spacing:.08em}
 #s10 .g6 figcaption small{display:block;font-family:"Helvetica Neue",Arial;font-size:9px;color:var(--taupe);letter-spacing:.16em;margin-top:2px}
 #s12 .ph{height:540px}
+#s11 .ph{height:500px;background-position:center 20%}
 #s12 .tx{top:30px;bottom:auto}#s12 .shade{top:0;bottom:auto;height:240px;background:linear-gradient(rgba(20,16,12,.55),transparent)}
 '''
 
 P = [
- dict(n='01', who='喜歡文字的人', h='睡前總想讀一段，被文字安慰', k1='每天', v1='作家語錄', k2='陪你', v2='365 天',
+ dict(n='01', who='喜歡文字的人', h='每天的開始，都能被一句暖心語錄溫暖', k1='每天', v1='作家語錄', k2='陪你', v2='365 天',
       p='連俞涵、周慕姿、陳繁齊…<br>每天一位作家，<mark>寫給今天的你</mark>。', img='q1'),
  dict(n='02', who='需要一點溫柔的人', h='日子好累，只想有人說聲沒關係', k1='每天', v1='今日指南', k2='用來', v2='安放心情',
       p='撕下今天這一頁，<br>讀到的那句剛好<mark>接住你</mark>。', img='q2'),
  dict(n='03', who='交換禮物', h='禮物預算一千，送一份有溫度的心意', k1='送給', v1='閨蜜同事', k2='挑選', v2='六款顏色',
-      p='挑一個最像他的顏色，<br>拆開那一刻，他就知道<mark>你懂他</mark>。', img='q3'),
- dict(n='04', who='聖誕禮物', h='送給今年辛苦了的那個人', k1='送給', v1='重要的人', k2='陪他', v2='365 天',
+      p='挑一個最像他的顏色，<br>拆開那一刻，他就知道<mark>你懂他</mark>。', img='q3', clip='x_style'),
+ dict(n='04', who='聖誕禮物', h='送給那位明年你想好好照顧他的人', k1='送給', v1='重要的人', k2='陪他', v2='365 天',
       p='每天早上撕一頁，<br>都是你<mark>替他說的加油</mark>。', img='q4'),
 ]
 def card(x):
-    return f'''<div class="cd"><div class="ph" style="background-image:url(img/{x["img"]}.jpg)"><div class="ov"><div class="no en">NO. {x["n"]}</div><div class="who">{x["who"]}</div><h3>{x["h"]}</h3></div></div>
+    if x.get('clip'):
+        caps = json.load(open(f'{D}/gif/caps_{x["clip"]}.json'))
+        ph = f'<div class="ph" data-clip="{x["clip"]}" style="background-image:url(gif/clips/{x["clip"]}/001.jpg)"><div class="kind" data-caps="{x["clip"]}">{caps[0]}</div>'
+    else:
+        ph = f'<div class="ph" style="background-image:url(img/{x["img"]}.jpg)">'
+    return f'''<div class="cd">{ph}<div class="ov"><div class="no en">NO. {x["n"]}</div><div class="who">{x["who"]}</div><h3>{x["h"]}</h3></div></div>
 <div class="tk"><div class="route"><div>{x["k1"]}<b>{x["v1"]}</b></div><div>{x["k2"]}<b>{x["v2"]}</b></div></div><div><p>{x["p"]}</p></div></div></div>'''
 
 def how(i, sid, h, lead, clip, step, en):
@@ -99,8 +110,10 @@ body = f'''
   <div class="eyebrow">誰適合煦暖曆？</div>
   <h2>聖誕禮物 x 交換禮物<br><span class="mark">送禮送到心坎裡</span></h2>
   <div class="lead">一天一句作家寫給你的話，<br>365 天，都有人陪。</div>
-  {''.join(card(x) for x in P)}
+  {''.join(card(x) for x in P[:2])}
 </section>
+<section id="s03c">{card(P[2])}</section>
+<section id="s03d">{card(P[3])}</section>
 <section id="s03b"><div class="xm"><div class="sh"></div>
   <i class="sp" style="left:8%;top:14%;animation-delay:0s"></i><i class="sp" style="left:88%;top:20%;animation-delay:.5s"></i><i class="sp" style="left:93%;top:72%;animation-delay:1s"></i><i class="sp" style="left:5%;top:78%;animation-delay:1.5s"></i><i class="sp" style="left:50%;top:6%;animation-delay:2s"></i>
   <div class="en sm">CHRISTMAS DELIVERY</div><div class="big">聖誕節前到貨</div></div></section>
@@ -122,23 +135,20 @@ body = f'''
   <div class="box"><div class="cap" data-caps="x_days">{caps[0]}</div>
   <div class="pgv"><div class="pgi" data-clip="x_days" style="background-image:url(gif/clips/x_days/001.jpg)"></div>{lbs}</div></div>
 </section>
-{how(2, 's06a', '跟喜歡的人，<br>交換今天的那一句', '你撕到的、她撕到的，<br>剛好都是對方需要的話。', 'x_share', '交換一句', 'SHARE')}
+{how(2, 's06a', '跟喜歡的人分享，<br>你喜歡的那段話', '今天的語錄想到了誰？<br>傳給你在乎的他／她', 'x_share', '交換一句', 'SHARE')}
 {how(3, 's07', '撕下來的每一頁，<br>貼成一面風景牆', '一天一張，貼滿一整面，<br>一年的心情都看得見。', 'x_wall', '貼成風景牆', 'COLLECT')}
-<section id="s08" class="full">
-  <div class="ph" data-clip="x_flip" style="background-image:url(gif/clips/x_flip/001.jpg)"></div><div class="shade"></div>
-  <div class="tx"><div class="a">今天的你，<br>會翻到哪一句？</div></div>
-</section>
+
 <section id="s09">
   <div class="eyebrow">作家陣容</div>
-  <h2>他們為 2027 的你<br>寫了這些字</h2>
-  <div class="lead">每位作家一句獨家語錄，<br>陪你走過一整年。</div>
+  <h2>他們為了 2027 的你，<br>預備這段話</h2>
+  <div class="lead">365 位作家，用最深刻的體悟<br>陪你走過未來每一天</div>
   <div class="wr">{wr}</div>
   <div class="tip">還有更多作家與好書摘句，一起陪你 365 天</div>
 </section>
 <section id="s10">
   <div class="eyebrow">年度代表色</div>
-  <h2>六款顏色，<br>挑一個最像你的</h2>
-  <div class="lead">經典款撕頁直立，底座款附可替換的立架</div>
+  <h2>六款顏色，<br>挑一個明年的代表色</h2>
+  <div class="lead">經典款由上往下撕、底座款可替換立架</div>
   <div class="g6">{g6}</div>
   <div class="nt">實拍色彩依螢幕顯示略有差異</div>
 </section>
@@ -158,7 +168,7 @@ body = f'''
 </section>
 '''
 html = f'''<!doctype html>
-<html lang="zh-Hant"><head><meta charset="utf-8"><title>煦暖曆落地頁 v7</title>
+<html lang="zh-Hant"><head><meta charset="utf-8"><title>煦暖曆落地頁 v8</title>
 <style>
 {css}
 {EXTRA}

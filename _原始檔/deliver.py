@@ -3,11 +3,11 @@ import os, shutil, base64, io, subprocess
 from PIL import Image
 D = os.path.dirname(os.path.abspath(__file__))
 B = "/Users/ningchang/Library/Mobile Documents/com~apple~CloudDocs/○煦暖曆/04_內容企劃/_多產品/落地頁改版設計_1122/"
-V = 'v7'; NAME = f'11.24_煦暖曆_落地頁改版_{V}_受眾卡換實拍照'
+V = 'v8'; NAME = f'11.24_煦暖曆_落地頁改版_{V}_底座經典輪播_文案十項修改'
 O = B + NAME
-SEC = [('s03', '03_誰適合煦暖曆', 0), ('s03b', '03b_聖誕節前到貨_金光_GIF', 1), ('s04', '04_數字列', 0),
+SEC = [('s03', '03_誰適合煦暖曆', 0), ('s03c', '03c_交換禮物_底座款經典款輪播_GIF', 1), ('s03d', '03d_聖誕禮物', 0), ('s03b', '03b_聖誕節前到貨_金光_GIF', 1), ('s04', '04_數字列', 0),
        ('s05', '05_365頁內頁牆', 0), ('s05a', '05a_窗前撕下今天_GIF', 1), ('s06', '06_一頁拆解_6天輪播_GIF', 1),
-       ('s06a', '06a_跟喜歡的人交換一句_GIF', 1), ('s07', '07_貼成風景牆_GIF', 1), ('s08', '08_今天會翻到哪一句_GIF', 1),
+       ('s06a', '06a_跟喜歡的人分享那段話_GIF', 1), ('s07', '07_貼成風景牆_GIF', 1),
        ('s09', '09_作家陣容', 0), ('s10', '10_六款年度代表色', 0), ('s11', '11_規格', 0), ('s12', '12_轉折', 0)]
 for sub in ['說明圖_1080寬', '動圖_MP4備用', '_原始檔']:
     os.makedirs(f'{O}/{sub}', exist_ok=True)
@@ -23,7 +23,7 @@ for sid, nm, g in SEC:
 title = f'煦暖曆落地頁 {V}'
 head = f'<!doctype html><html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{title}</title><style>body{{margin:0;background:#888}}main{{max-width:432px;margin:0 auto;background:#fff}}img,video{{display:block;width:100%}}</style><main>'
 dyn = head + '\n'.join(f'<img src="說明圖_1080寬/{n}">' for _, n, _ in names) + '</main>'
-open(f'{O}/{NAME.replace("_受眾卡換實拍照","")}_整頁預覽_動態.html', 'w').write(dyn)
+open(f'{O}/{NAME.replace("_底座經典輪播_文案十項修改","")}_整頁預覽_動態.html', 'w').write(dyn)
 # single file
 parts = []
 for sid, n, g in names:
@@ -34,7 +34,7 @@ for sid, n, g in names:
         im = Image.open(f'{O}/說明圖_1080寬/{n}'); im = im.resize((864, round(im.height * 864 / im.width)), Image.LANCZOS)
         bio = io.BytesIO(); im.save(bio, 'JPEG', quality=86)
         parts.append(f'<img src="data:image/jpeg;base64,{base64.b64encode(bio.getvalue()).decode()}">')
-open(f'{O}/{NAME.replace("_受眾卡換實拍照","")}_整頁預覽_單檔整合.html', 'w').write(head + ''.join(parts) + '</main>')
+open(f'{O}/{NAME.replace("_底座經典輪播_文案十項修改","")}_整頁預覽_單檔整合.html', 'w').write(head + ''.join(parts) + '</main>')
 # static preview: first frame of each gif (s06 frame 1, s03b frame 10)
 ims = []
 for sid, n, g in names:
@@ -46,9 +46,9 @@ for sid, n, g in names:
 H = sum(i.height for i in ims); st = Image.new('RGB', (1080, H)); y = 0
 for i in ims: st.paste(i, (0, y)); y += i.height
 st = st.resize((540, H // 2), Image.LANCZOS)
-st.save(f'{O}/{NAME.replace("_受眾卡換實拍照","")}_整頁預覽_靜態第一格.jpg', quality=82)
+st.save(f'{O}/{NAME.replace("_底座經典輪播_文案十項修改","")}_整頁預覽_靜態第一格.jpg', quality=82)
 # sources
-for f in ['build_page.py', 'page.html', 'base.css', 'fonts_cream.otf', 'shot.py', 'deliver.py']:
+for f in ['build_page.py', 'page.html', 'base.css', 'fonts_cream.otf', 'shot.py', 'deliver.py', 'patch_end.py']:
     shutil.copy(f'{D}/{f}', f'{O}/_原始檔/{f}')
 for f in ['clips_xn.py', 'render_gif.py', 'enc.sh', 'caps_x_days.json']:
     shutil.copy(f'{D}/gif/{f}', f'{O}/_原始檔/{f}')
