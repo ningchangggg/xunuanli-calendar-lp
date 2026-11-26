@@ -1,4 +1,4 @@
-<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><title>煦暖曆落地頁 v11</title><style>
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><title>煦暖曆落地頁 v12</title><style>
 @font-face{font-family:Cream;src:url(fonts_cream.otf)}
 :root{--kraft:#D8C2A3;--board:#2E3A33;--board2:#3A4A40;--chalk:#F3EBDD;--paper:#FFFDF7;--ink:#2B211D;--text:#4A3D36;--wine:#8B2E3E;--pink:#F2C9BE;--yl:#F3D37A;--mute:#8E7B6C;--line:#E2D3BE}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -19,9 +19,14 @@ h2{font-size:28px;line-height:1.4;color:var(--ink);text-align:center;letter-spac
 /* 03 受眾 */
 #s03{padding:0 0 6px}
 #s03 header{background:var(--board);padding:34px 24px 30px;text-align:center;position:relative}
+#s03 header .eyebrow{color:#E7B9A6}#s03 header h2{color:#F7F0E3;margin-top:10px}#s03 header .lead{color:#E3DCCF;margin-top:10px}
 #s03 header:after{content:"";position:absolute;left:0;right:0;bottom:-10px;height:10px;background:linear-gradient(rgba(0,0,0,.18),transparent)}
-.shelf{padding:30px 16px 0}
-.bk{position:relative;margin-bottom:44px}
+.shelf{padding:30px 0 0}
+.bk{position:relative;padding:0 16px 44px}
+.sec3{padding-top:0}
+.bk .ph{position:relative}
+.kd{position:absolute;left:12px;top:12px;display:flex;align-items:baseline;gap:8px;background:rgba(46,58,51,.9);padding:5px 12px 6px}
+.kd b{font-size:15px;color:var(--chalk);letter-spacing:.14em}.kd span{font-size:10px;color:#E7B9A6;letter-spacing:.2em}
 .bk .ph{height:320px;background-size:cover;box-shadow:0 14px 26px rgba(60,40,20,.28)}
 .obi{position:relative;background:var(--wine);color:#FBF4EA;padding:12px 110px 14px 18px;box-shadow:0 8px 16px rgba(60,20,20,.22)}
 .obi .k{font-size:11.5px;letter-spacing:.24em;color:var(--pink)}
@@ -137,22 +142,22 @@ h2{font-size:28px;line-height:1.4;color:var(--ink);text-align:center;letter-spac
 <div class="desk"><div class="pop"><div class="pin"><svg width="34" height="58" viewBox="0 0 34 58"><defs><linearGradient id="wd" x1="0" x2="1"><stop offset="0" stop-color="#000" stop-opacity=".18"/><stop offset=".5" stop-color="#fff" stop-opacity=".15"/><stop offset="1" stop-color="#000" stop-opacity=".2"/></linearGradient></defs>
 <rect x="9" y="0" width="16" height="44" rx="3" fill="#C9A77C"/><rect x="9" y="0" width="16" height="44" rx="3" fill="url(#wd)"/>
 <rect x="6" y="18" width="22" height="7" rx="2" fill="#8E8E8E"/><rect x="15" y="40" width="4" height="18" fill="#B8956A"/></svg></div><div class="bar">推薦給<span>NO.01</span></div><div class="for">這本書，推薦給</div><div class="who">喜歡文字的人</div><div class="v">書買了一疊，<br>一本都沒翻完。</div></div>
-<div class="mk"><div class="rb"></div><img src="img/pg1.jpg"><div class="tg">今日選句<b>8.18</b></div></div></div></div><div class="bk rv"><div class="ph" style="background-image:url(img/q2.jpg);background-position:50% 45%"></div>
+<div class="mk"><div class="rb"></div><img src="img/pg1.jpg"><div class="tg">今日選句<b>8.18</b></div></div></div></div></div></section><section id="s03_2" class="sec3"><div class="bk rv"><div class="ph" data-clip="x_wallq2" style="background-image:url(gif/clips/x_wallq2/001.jpg);background-position:50% 45%"></div>
 <div class="obi"><div class="k">店員手寫推薦 NO.02</div><div class="h">撕下今天這一頁，<br>剛好有人接住你的疲憊。</div><div class="s">365 位作家<br>每天一頁</div></div>
 <div class="desk"><div class="pop"><div class="pin"><svg width="34" height="58" viewBox="0 0 34 58"><defs><linearGradient id="wd" x1="0" x2="1"><stop offset="0" stop-color="#000" stop-opacity=".18"/><stop offset=".5" stop-color="#fff" stop-opacity=".15"/><stop offset="1" stop-color="#000" stop-opacity=".2"/></linearGradient></defs>
 <rect x="9" y="0" width="16" height="44" rx="3" fill="#C9A77C"/><rect x="9" y="0" width="16" height="44" rx="3" fill="url(#wd)"/>
 <rect x="6" y="18" width="22" height="7" rx="2" fill="#8E8E8E"/><rect x="15" y="40" width="4" height="18" fill="#B8956A"/></svg></div><div class="bar">推薦給<span>NO.02</span></div><div class="for">這本書，推薦給</div><div class="who">需要一點溫柔的人</div><div class="v">最近好累，<br>好像沒人問我還好嗎。</div></div>
-<div class="mk"><div class="rb"></div><img src="img/pg2.jpg"><div class="tg">今日選句<b>11.28</b></div></div></div></div><div class="bk"><div class="ph" style="background-image:url(img/q3.jpg);background-position:30% 60%"></div>
+<div class="mk"><div class="rb"></div><img src="img/pg2.jpg"><div class="tg">今日選句<b>11.28</b></div></div></div></div></section><section id="s03_3" class="sec3"><div class="bk"><div class="ph" data-clip="x_q3" style="background-image:url(gif/clips/x_q3/001.jpg);background-position:30% 60%"><div class="kd" data-caps="x_q3"><b>底座款</b><span>STAND</span></div></div>
 <div class="obi"><div class="k">店員手寫推薦 NO.03</div><div class="h">365 天，<br>他每天早上都會想起你。</div><div class="s">365 位作家<br>每天一頁</div></div>
 <div class="desk"><div class="pop"><div class="pin"><svg width="34" height="58" viewBox="0 0 34 58"><defs><linearGradient id="wd" x1="0" x2="1"><stop offset="0" stop-color="#000" stop-opacity=".18"/><stop offset=".5" stop-color="#fff" stop-opacity=".15"/><stop offset="1" stop-color="#000" stop-opacity=".2"/></linearGradient></defs>
 <rect x="9" y="0" width="16" height="44" rx="3" fill="#C9A77C"/><rect x="9" y="0" width="16" height="44" rx="3" fill="url(#wd)"/>
 <rect x="6" y="18" width="22" height="7" rx="2" fill="#8E8E8E"/><rect x="15" y="40" width="4" height="18" fill="#B8956A"/></svg></div><div class="bar">推薦給<span>NO.03</span></div><div class="for">這本書，推薦給</div><div class="who">交換禮物</div><div class="v">預算一千，<br>不想送用完就丟的東西。</div></div>
-<div class="mk"><div class="rb"></div><img src="img/pg3.jpg"><div class="tg">今日選句<b>2.24</b></div></div></div></div><div class="bk rv"><div class="ph" style="background-image:url(img/q4.jpg);background-position:45% 30%"></div>
+<div class="mk"><div class="rb"></div><img src="img/pg3.jpg"><div class="tg">今日選句<b>2.24</b></div></div></div></div></section><section id="s03_4" class="sec3"><div class="bk rv"><div class="ph" style="background-image:url(img/q4.jpg);background-position:45% 30%"></div>
 <div class="obi"><div class="k">店員手寫推薦 NO.04</div><div class="h">讓作家替你說，<br>一天說一次。</div><div class="s">365 位作家<br>每天一頁</div></div>
 <div class="desk"><div class="pop"><div class="pin"><svg width="34" height="58" viewBox="0 0 34 58"><defs><linearGradient id="wd" x1="0" x2="1"><stop offset="0" stop-color="#000" stop-opacity=".18"/><stop offset=".5" stop-color="#fff" stop-opacity=".15"/><stop offset="1" stop-color="#000" stop-opacity=".2"/></linearGradient></defs>
 <rect x="9" y="0" width="16" height="44" rx="3" fill="#C9A77C"/><rect x="9" y="0" width="16" height="44" rx="3" fill="url(#wd)"/>
 <rect x="6" y="18" width="22" height="7" rx="2" fill="#8E8E8E"/><rect x="15" y="40" width="4" height="18" fill="#B8956A"/></svg></div><div class="bar">推薦給<span>NO.04</span></div><div class="for">這本書，推薦給</div><div class="who">聖誕禮物</div><div class="v">想謝謝他，<br>可是說不出口。</div></div>
-<div class="mk"><div class="rb"></div><img src="img/pg4.jpg"><div class="tg">今日選句<b>7.17</b></div></div></div></div></div></section>
+<div class="mk"><div class="rb"></div><img src="img/pg4.jpg"><div class="tg">今日選句<b>7.17</b></div></div></div></div></section>
 <section id="s03b"><div class="xm"><div class="sh"></div><i class="sp" style="left:8%;top:18%;animation-delay:0s"></i><i class="sp" style="left:90%;top:70%;animation-delay:0.5s"></i><i class="sp" style="left:14%;top:76%;animation-delay:1s"></i><i class="sp" style="left:80%;top:16%;animation-delay:1.5s"></i><i class="sp" style="left:50%;top:88%;animation-delay:2s"></i><div class="rib">現貨・聖誕檔期</div>
 <div class="sm">CHRISTMAS DELIVERY</div><div class="big">聖誕節前到貨</div><div class="ft">店員已經幫你包好，等你帶回家</div></div></section>
 <section id="s04">

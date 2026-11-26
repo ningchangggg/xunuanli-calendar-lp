@@ -25,9 +25,14 @@ h2{font-size:28px;line-height:1.4;color:var(--ink);text-align:center;letter-spac
 /* 03 受眾 */
 #s03{padding:0 0 6px}
 #s03 header{background:var(--board);padding:34px 24px 30px;text-align:center;position:relative}
+#s03 header .eyebrow{color:#E7B9A6}#s03 header h2{color:#F7F0E3;margin-top:10px}#s03 header .lead{color:#E3DCCF;margin-top:10px}
 #s03 header:after{content:"";position:absolute;left:0;right:0;bottom:-10px;height:10px;background:linear-gradient(rgba(0,0,0,.18),transparent)}
-.shelf{padding:30px 16px 0}
-.bk{position:relative;margin-bottom:44px}
+.shelf{padding:30px 0 0}
+.bk{position:relative;padding:0 16px 44px}
+.sec3{padding-top:0}
+.bk .ph{position:relative}
+.kd{position:absolute;left:12px;top:12px;display:flex;align-items:baseline;gap:8px;background:rgba(46,58,51,.9);padding:5px 12px 6px}
+.kd b{font-size:15px;color:var(--chalk);letter-spacing:.14em}.kd span{font-size:10px;color:#E7B9A6;letter-spacing:.2em}
 .bk .ph{height:320px;background-size:cover;box-shadow:0 14px 26px rgba(60,40,20,.28)}
 .obi{position:relative;background:var(--wine);color:#FBF4EA;padding:12px 110px 14px 18px;box-shadow:0 8px 16px rgba(60,20,20,.22)}
 .obi .k{font-size:11.5px;letter-spacing:.24em;color:var(--pink)}
@@ -154,15 +159,25 @@ def pin():
 
 
 def s03():
-    h = '''<section id="s03"><header><div class="sign">煦暖書店　本週選書</div><div class="eyebrow">誰適合煦暖曆？</div>
+    clips = {1: 'x_wallq2', 2: 'x_q3'}
+    out = '''<section id="s03"><header><div class="sign">煦暖書店　本週選書</div><div class="eyebrow">誰適合煦暖曆？</div>
 <h2>店員推薦：<br>今年最好送的一本</h2><div class="lead">365 位作家，一天一頁。<br>給愛讀的人、累了的人，也給你想謝謝的人。</div></header><div class="shelf">'''
     for i, x in enumerate(C):
         m, d = x['md'].split('.')
-        h += f'''<div class="bk{" rv" if i % 2 else ""}"><div class="ph" style="background-image:url(img/{x["img"]}.jpg);background-position:{x["fx"]}"></div>
+        if i:
+            out += f'<section id="s03_{i+1}" class="sec3">'
+        clip = clips.get(i)
+        src = f'gif/clips/{clip}/001.jpg' if clip else f'img/{x["img"]}.jpg'
+        dc = f' data-clip="{clip}"' if clip else ''
+        kd = ''
+        if clip == 'x_q3':
+            kd = '<div class="kd" data-caps="x_q3">' + json.load(open(f'{D}/gif/caps_x_q3.json'))[0] + '</div>'
+        out += f'''<div class="bk{" rv" if i % 2 else ""}"><div class="ph"{dc} style="background-image:url({src});background-position:{x["fx"]}">{kd}</div>
 <div class="obi"><div class="k">店員手寫推薦 NO.{x["n"]}</div><div class="h">{x["line"]}</div><div class="s">365 位作家<br>每天一頁</div></div>
 <div class="desk"><div class="pop"><div class="pin">{pin()}</div><div class="bar">推薦給<span>NO.{x["n"]}</span></div><div class="for">這本書，推薦給</div><div class="who">{x["who"]}</div><div class="v">{x["voice"]}</div></div>
 <div class="mk"><div class="rb"></div><img src="img/{x["pg"]}.jpg"><div class="tg">今日選句<b>{int(m)}.{int(d)}</b></div></div></div></div>'''
-    return h + '</div></section>'
+        out += '</div></section>' if i == 0 else '</section>'
+    return out
 
 
 def how(i, sid, h, lead, clip, step, en, dark=False):
@@ -231,6 +246,6 @@ body = s03() + f'''
 <div class="tx2"><div class="a">每天一句，<br>剛好接住今天的你</div><div class="b">日子不一定順，<br>但每天早上，都有人先對你說聲早安。</div></div>
 <div class="nx">找不到要送什麼的時候，<br>就送一整年的好句子。<div class="tg">明天，還有一位作家在等你</div></div></section>
 '''
-html = f'<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><title>煦暖曆落地頁 v11</title><style>{CSS}</style></head><body>{body}</body></html>'
+html = f'<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><title>煦暖曆落地頁 v12</title><style>{CSS}</style></head><body>{body}</body></html>'
 open(f'{D}/page.html', 'w').write(html)
 print('ok', len(html))
