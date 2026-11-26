@@ -1,3 +1,10 @@
+# 煦暖曆落地頁 v13（2026-11-27）：受眾卡刪掉「今日選句」標籤
+
+阿寧圈了第 1 張內頁書籤下方的黃色「今日選句 8.18」：「這個標籤都刪掉」→ 四張卡的今日選句膠囊全部拿掉（03、03-2 GIF、03-3 GIF、03-4 重出）。收尾黑板的黃膠囊「明天，還有一位作家在等你」保留。其他同 v12。
+
+---
+以下為 v12 說明：
+
 # 煦暖曆落地頁 v12（2026-11-27）：受眾卡加兩張動圖、開頭標題字色修正
 
 阿寧看手機預覽（v11）圈了三處：
@@ -52,7 +59,7 @@ v10（B 晨光時刻）資料夾保留，沒有上預覽網址。
 - Shopify 還沒更新。
 
 ## 預覽網址
-https://ningchangggg.github.io/xunuanli-calendar-lp/（repo `ningchangggg/xunuanli-calendar-lp`，內容＝v12 資料夾，index.html＝整頁預覽_動態）
+https://ningchangggg.github.io/xunuanli-calendar-lp/（repo `ningchangggg/xunuanli-calendar-lp`，內容＝v13 資料夾，index.html＝整頁預覽_動態）
 
 ## 重做
 同 v10：`python3 build_v11.py` → `python3 shot_v10.py` → `python3 render_v10.py` → `zsh enc.sh <sec> 15`（s03b 用 10）→ `python3 deliver_v11.py`。動圖片段在 v10 工作區切好（麻豆 C0246／C0234／C0421、PDF 6 天、經典款／底座款 12 張）。

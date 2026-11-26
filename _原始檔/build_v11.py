@@ -175,7 +175,7 @@ def s03():
         out += f'''<div class="bk{" rv" if i % 2 else ""}"><div class="ph"{dc} style="background-image:url({src});background-position:{x["fx"]}">{kd}</div>
 <div class="obi"><div class="k">店員手寫推薦 NO.{x["n"]}</div><div class="h">{x["line"]}</div><div class="s">365 位作家<br>每天一頁</div></div>
 <div class="desk"><div class="pop"><div class="pin">{pin()}</div><div class="bar">推薦給<span>NO.{x["n"]}</span></div><div class="for">這本書，推薦給</div><div class="who">{x["who"]}</div><div class="v">{x["voice"]}</div></div>
-<div class="mk"><div class="rb"></div><img src="img/{x["pg"]}.jpg"><div class="tg">今日選句<b>{int(m)}.{int(d)}</b></div></div></div></div>'''
+<div class="mk"><div class="rb"></div><img src="img/{x["pg"]}.jpg"></div></div></div>'''
         out += '</div></section>' if i == 0 else '</section>'
     return out
 
@@ -246,6 +246,6 @@ body = s03() + f'''
 <div class="tx2"><div class="a">每天一句，<br>剛好接住今天的你</div><div class="b">日子不一定順，<br>但每天早上，都有人先對你說聲早安。</div></div>
 <div class="nx">找不到要送什麼的時候，<br>就送一整年的好句子。<div class="tg">明天，還有一位作家在等你</div></div></section>
 '''
-html = f'<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><title>煦暖曆落地頁 v12</title><style>{CSS}</style></head><body>{body}</body></html>'
+html = f'<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><title>煦暖曆落地頁 v13</title><style>{CSS}</style></head><body>{body}</body></html>'
 open(f'{D}/page.html', 'w').write(html)
 print('ok', len(html))
