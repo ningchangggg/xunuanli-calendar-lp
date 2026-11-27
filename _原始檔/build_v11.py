@@ -113,37 +113,38 @@ h2{font-size:28px;line-height:1.4;color:var(--ink);text-align:center;letter-spac
 #s09 .tip{font-size:12.5px;color:#E9DCC6;text-align:center;margin-top:20px;letter-spacing:.08em}
 
 
-/* 09a–e 作家介紹（作者折口） */
-.aus{padding:30px 16px 34px}
+/* 09a–e 作家介紹（一位一張紙卡） */
+.aus{padding:10px 16px 12px}
 .aus.first{padding-top:0}
-.aus header{background:var(--board);margin:0 -16px 30px;padding:34px 24px 30px;text-align:center;position:relative}
+.aus header{background:var(--board);margin:0 -16px 26px;padding:32px 24px 28px;text-align:center;position:relative}
 .aus header .eyebrow{color:#E7B9A6}.aus header h2{color:#F7F0E3;margin-top:10px}.aus header .lead{color:#E3DCCF;margin-top:10px}
 .aus header:after{content:"";position:absolute;left:0;right:0;bottom:-10px;height:10px;background:linear-gradient(rgba(0,0,0,.18),transparent)}
-.ah{display:flex;gap:18px;align-items:flex-start}
+.ac{position:relative;background:var(--paper);box-shadow:0 8px 18px rgba(50,30,15,.2);padding:18px 18px 18px}
+.ah{display:flex;gap:16px;align-items:center}
 .aus.rv .ah{flex-direction:row-reverse}
-.pol{position:relative;flex:none;width:158px;background:var(--paper);padding:6px 6px 0;box-shadow:0 8px 16px rgba(50,30,15,.28);transform:rotate(-2.5deg);margin-top:18px}
-.aus.rv .pol{transform:rotate(2.5deg)}
-.pol .im{height:198px;background-size:cover;background-position:center top}
-.pol .nm{font-size:12px;color:var(--mute);text-align:center;padding:7px 0 8px;letter-spacing:.16em}
-.pol .pin{position:absolute;left:50%;top:-38px;margin-left:-17px}
-.ai{flex:1;padding-top:22px}
-.ai .n{font-size:30px;color:var(--wine);letter-spacing:.1em}
-.ai .r{font-size:14px;color:var(--text);line-height:1.7;margin-top:8px;letter-spacing:.04em}
-.ai .bk{display:inline-block;font-size:16px;color:var(--wine);margin-top:12px;letter-spacing:.06em;border-bottom:1.5px dashed #B9967A;padding-bottom:3px}
-.ai .aw{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
-.ai .aw span{font-size:11.5px;color:#7A5B1E;background:#F6E7B8;border-radius:12px;padding:3px 9px;letter-spacing:.04em;white-space:nowrap}
-.ac{position:relative;background:var(--paper);margin-top:26px;box-shadow:0 10px 20px rgba(50,30,15,.22)}
-.ac .bar{background:var(--wine);color:#FBF4EA;font-size:12.5px;letter-spacing:.2em;padding:8px 52px 8px 14px;display:flex;justify-content:space-between}
-.ac .bar span{color:var(--pink);font-size:11px}
-.ac .t{font-size:18px;color:var(--ink);text-align:center;margin-top:18px;letter-spacing:.08em}
-.ac .tx{font-size:15.5px;line-height:1.95;color:var(--text);padding:14px 22px 22px;letter-spacing:.04em}
-.ac .tx p+p{margin-top:10px}
-.ac .po{display:flex;gap:18px;justify-content:center;padding:16px 18px 22px;font-size:15.5px;line-height:2.05;color:var(--text);letter-spacing:.06em}
-.ac .po1{padding:14px 30px 22px;font-size:16.5px;line-height:2.05;color:var(--text);letter-spacing:.08em}
-.ac .rb{position:absolute;right:22px;top:-12px;width:15px;height:46px;background:var(--wine);clip-path:polygon(0 0,100% 0,100% 100%,50% 86%,0 100%);box-shadow:0 2px 3px rgba(0,0,0,.2)}
-.more{background:var(--board);margin-top:30px;padding:24px 18px 22px;text-align:center;box-shadow:0 10px 20px rgba(30,30,25,.3)}
-.more .h{font-size:19px;color:#F7F0E3;line-height:1.6;letter-spacing:.06em}
-.more .nm{margin-top:14px;font-size:14px;line-height:2.1;color:#E3DCCF;letter-spacing:.04em}
+.pol{position:relative;flex:none;width:104px;background:#fff;padding:4px 4px 12px;box-shadow:0 5px 10px rgba(50,30,15,.25);transform:rotate(-3deg)}
+.aus.rv .pol{transform:rotate(3deg)}
+.pol .im{height:128px;background-size:cover;background-position:center top}
+.ai{flex:1}
+.aus.rv .ai{text-align:right}
+.ai .n{font-size:27px;color:var(--wine);letter-spacing:.1em}
+.ai .r{font-size:13.5px;color:var(--text);line-height:1.65;margin-top:6px;letter-spacing:.04em}
+.ai .aw{display:flex;flex-wrap:wrap;gap:5px;margin-top:9px}
+.aus.rv .ai .aw{justify-content:flex-end}
+.ai .aw span{font-size:11px;color:#7A5B1E;background:#F6E7B8;border-radius:12px;padding:2px 8px;letter-spacing:.02em;white-space:nowrap}
+.ac .lb{display:flex;align-items:center;gap:10px;margin-top:16px;font-size:12px;letter-spacing:.2em;color:var(--wine)}
+.ac .lb:after{content:"";flex:1;border-top:1px dashed #C9A893}
+.ac .lb b{background:var(--wine);color:#FBF4EA;padding:3px 9px;letter-spacing:.16em}
+.ac .t{font-size:17px;color:var(--ink);margin-top:12px;letter-spacing:.08em}
+.ac .tx{font-size:15px;line-height:1.9;color:var(--text);margin-top:8px;letter-spacing:.04em}
+.ac .tx p+p{margin-top:8px}
+.ac .po{display:flex;gap:22px;margin-top:8px;font-size:15px;line-height:1.95;color:var(--text);letter-spacing:.06em}
+.ac .po1{margin-top:8px;font-size:15.5px;line-height:1.95;color:var(--text);letter-spacing:.08em}
+.ac .rb{position:absolute;right:20px;top:-8px;width:14px;height:40px;background:var(--wine);clip-path:polygon(0 0,100% 0,100% 100%,50% 86%,0 100%);box-shadow:0 2px 3px rgba(0,0,0,.2)}
+.aus.rv .ac .rb{right:auto;left:20px}
+.more{background:var(--board);padding:22px 18px 20px;text-align:center;box-shadow:0 8px 18px rgba(30,30,25,.3)}
+.more .h{font-size:18px;color:#F7F0E3;line-height:1.6;letter-spacing:.06em}
+.more .nm{margin-top:12px;font-size:14px;line-height:2.05;color:#E3DCCF;letter-spacing:.04em}
 .more .nm i{font-style:normal;color:#E7B9A6;margin:0 6px}
 
 /* 10 六色 */
@@ -244,16 +245,15 @@ for side, y, n, t in LB:
 
 def au(sid, img, name, role, book, awards, bar, title, body, rv=False, first=False, head=''):
     aw = ('<div class="aw">' + ''.join(f'<span>{a}</span>' for a in awards) + '</div>') if awards else ''
-    bk = f'<div class="bk">{book}</div>' if book else ''
     t = f'<div class="t">{title}</div>' if title else ''
     return f'''<section id="{sid}" class="aus{' rv' if rv else ''}{' first' if first else ''}">{head}
-<div class="ah"><div class="pol"><div class="pin">{pin()}</div><div class="im" style="background-image:url(img/{img}.jpg)"></div><div class="nm">AUTHOR</div></div>
-<div class="ai"><div class="n">{name}</div><div class="r">{role}</div>{bk}{aw}</div></div>
-<div class="ac"><i class="rb"></i><div class="bar">{bar}<span>2027 煦暖曆</span></div>{t}{body}</div></section>'''
+<div class="ac"><i class="rb"></i><div class="ah"><div class="pol"><div class="im" style="background-image:url(img/{img}.jpg)"></div></div>
+<div class="ai"><div class="n">{name}</div><div class="r">{role}</div>{aw}</div></div>
+<div class="lb"><b>{bar}</b></div>{t}{body}</div></section>'''
 AU_HEAD = '<header><div class="eyebrow">作家介紹</div><h2>知名作家，<br>為 2027 的你寫下的文字</h2><div class="lead">煦暖曆收錄多位創作者的文字，<br>在一年裡，陪你走過不同的時刻。</div></header>'
 L1 = ['我沒辦法安慰你','世界這麼亂','不能什麼都要','所以不如不要','也不能什麼都說','那不如不說','即使現在一無所有','至少等待時的眼神','讓你看起來很美']
 L2 = ['心情潮濕','適合捲曲起來','隨時皺掉','如今我明白','把姿態放低','人自然會踩上來','而你怎麼不祝福','一覺醒來','我們全都早日康復']
-AUTH = au('s09a','w7','連俞涵','台灣演員 & 作家',None,['第 51 屆金鐘獎 戲劇節目新進演員獎'],'獨家創作','獨家為 2027 煦暖曆創作寫詩',
+AUTH = au('s09a','w7','連俞涵','台灣演員 & 作家',None,['第 51 屆金鐘獎 戲劇節目新進演員獎'],'獨家為 2027 煦暖曆創作寫詩','',
   '<div class="po"><div>'+'<br>'.join(L1)+'</div><div>'+'<br>'.join(L2)+'</div></div>', first=True, head=AU_HEAD) + \
   au('s09b','w2','周慕姿','《情緒勒索》作者<br>& 知名諮商心理師',None,None,'收錄作品','',
   '<div class="tx"><p>自信不是準備好才會有的，是你硬著頭皮做了，發現沒想像這麼可怕的時候，就敢再做一次，然後一次一次，它自己長出來。</p><p>很多人以為自信是一種人格特質，好像有些人天生就比較有自信，但其實自信是一種透過經驗慢慢累積的能力。</p><p>而且真正的自信，不是「我一定會成功」，而是「就算結果不完美，我也有能力承受」。</p></div>', rv=True) + \
@@ -262,7 +262,7 @@ AUTH = au('s09a','w7','連俞涵','台灣演員 & 作家',None,['第 51 屆金�
   au('s09d','w4','林達陽','當代台灣作家',None,['聯合報文學獎','台北文學獎','香港青年文學獎','時報文學獎','自由時報林榮三文學獎'],'收錄作品','《新年快樂》　◎林達陽',
   '<div class="tx">「S，新年快樂。剛在人群裡看過跨年煙火，美則美矣，生命裡的花火不知道是被點燃了，還是已經消逝。那是一樣的嗎？在人潮的推擠中高喊新年快樂的經驗還是美好得令人發熱。惟有瘋狂是真實的。我現在仍隨捷運車廂在地底搖晃著，好像醉了但應該沒有，只是話有點多。傳訊給妳只是想分享讓妳知道。希望妳快樂，希望我能是妳的快樂。」</div>', rv=True) + \
   au('s09e','w5','沈希默','當代台灣作家',None,None,'收錄作品','《讓我在你心房安居》　◎沈希默',
-  '<div class="tx">有一天我也會遇到一個人。<br>他不會嫌棄我的怪脾氣又愛生氣，他會等我一字一句說清我的情緒，<br>他會願意陪我走完一輪又一輪的四季。</div>') + '<section id="s09f" class="aus" style="padding-top:0"><div class="more" style="margin-top:0"><div class="h">更多精選語錄與知名作家<br>全收錄在 2027 煦暖曆</div><div class="nm">' + '<i>・</i>'.join(f'<span style="white-space:nowrap">{n}</span>' for n in ['張曼娟','小野(李遠)','吳若權','賴佩霞','鄧惠文','海苔熊','沈春華','王學呈','楊照','寒建嘉','李豪','藤井樹','蔣勳','LuckyLuLu','藍白拖','丁菱娟','張瓊允']) + '</div></div></section>'
+  '<div class="tx">有一天我也會遇到一個人。<br>他不會嫌棄我的怪脾氣又愛生氣，他會等我一字一句說清我的情緒，<br>他會願意陪我走完一輪又一輪的四季。</div>') + '<section id="s09f" class="aus" style="padding-top:10px;padding-bottom:30px"><div class="more"><div class="h">更多精選語錄與知名作家<br>全收錄在 2027 煦暖曆</div><div class="nm">' + '<i>・</i>'.join(f'<span style="white-space:nowrap">{n}</span>' for n in ['張曼娟','小野(李遠)','吳若權','賴佩霞','鄧惠文','海苔熊','沈春華','王學呈','楊照','寒建嘉','李豪','藤井樹','蔣勳','LuckyLuLu','藍白拖','丁菱娟','張瓊允']) + '</div></div></section>'
 
 W = [('w1', 'Queenie Kao'), ('w2', '周慕姿'), ('w3', '喬心誌'), ('w4', '林達陽'), ('w5', '沈希默'), ('w6', '知寒'), ('w7', '連俞涵'), ('w8', '陳繁齊')]
 wr = ''.join(f'<figure><div class="im" style="background-image:url(img/{a}.jpg)"></div><figcaption>{b}</figcaption></figure>' for a, b in W)
@@ -304,6 +304,6 @@ body = s03() + f'''
 <div class="tx2"><div class="a">每天一句，<br>剛好接住今天的你</div><div class="b">日子不一定順，<br>但每天早上，都有人先對你說聲早安。</div></div>
 <div class="nx">找不到要送什麼的時候，<br>就送一整年的好句子。<div class="tg">明天，還有一位作家在等你</div></div></section>
 '''
-html = f'<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><title>煦暖曆落地頁 v16</title><style>{CSS}</style></head><body>{body}</body></html>'
+html = f'<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><title>煦暖曆落地頁 v17</title><style>{CSS}</style></head><body>{body}</body></html>'
 open(f'{D}/page.html', 'w').write(html)
 print('ok', len(html))
