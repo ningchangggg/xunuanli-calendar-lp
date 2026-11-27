@@ -60,7 +60,7 @@ h2{font-size:28px;line-height:1.4;color:var(--ink);text-align:center;letter-spac
 #s03b{padding:4px 16px 28px}
 #s03b .xm{position:relative;height:150px;background:var(--board);border:6px solid #A9845B;box-shadow:inset 0 0 0 2px rgba(0,0,0,.25),0 10px 20px rgba(60,40,20,.3);text-align:center;color:var(--chalk);overflow:hidden}
 #s03b .rib{position:absolute;right:-46px;top:20px;width:190px;transform:rotate(38deg);background:var(--wine);color:#FBF4EA;font-size:12px;letter-spacing:.2em;padding:6px 0;box-shadow:0 3px 8px rgba(0,0,0,.3)}
-#s03b .sm{font-size:12px;letter-spacing:.34em;padding-top:26px;color:#E7B9A6}
+#s03b .sm{font-size:11px;letter-spacing:.2em;padding-top:26px;color:#E7B9A6}
 #s03b .big{font-size:40px;letter-spacing:.14em;margin-top:8px}
 #s03b .ft{font-size:13px;letter-spacing:.14em;margin-top:6px;color:#D9D2C4}
 #s03b .sh{position:absolute;top:0;bottom:0;width:26%;left:-40%;background:linear-gradient(100deg,transparent,rgba(243,211,122,.28),transparent);animation:sweep 2.5s linear infinite}
@@ -214,8 +214,8 @@ g6 = ''.join(f'<figure><div class="im" data-c6="x_{a}" style="background-image:u
 sp = ''.join(f'<i class="sp" style="left:{l}%;top:{t}%;animation-delay:{d}s"></i>' for l, t, d in [(8, 18, 0), (90, 70, .5), (14, 76, 1), (80, 16, 1.5), (50, 88, 2)])
 
 body = s03() + f'''
-<section id="s03b"><div class="xm"><div class="sh"></div>{sp}<div class="rib">現貨・聖誕檔期</div>
-<div class="sm">CHRISTMAS DELIVERY</div><div class="big">聖誕節前到貨</div><div class="ft">店員已經幫你包好，等你帶回家</div></div></section>
+<section id="s03b"><div class="xm"><div class="sh"></div>{sp}<div class="rib">現貨直出</div>
+<div class="sm">IN STOCK • READY TO SHIP</div><div class="big">熱騰騰到貨</div><div class="ft">店員已經幫你包好，等你帶回家</div></div></section>
 <section id="s04">
   <div><div class="n">365</div><div class="c">句作家語錄</div></div>
   <div><div class="n">6<small>款</small></div><div class="c">年度代表色</div></div>
@@ -246,6 +246,6 @@ body = s03() + f'''
 <div class="tx2"><div class="a">每天一句，<br>剛好接住今天的你</div><div class="b">日子不一定順，<br>但每天早上，都有人先對你說聲早安。</div></div>
 <div class="nx">找不到要送什麼的時候，<br>就送一整年的好句子。<div class="tg">明天，還有一位作家在等你</div></div></section>
 '''
-html = f'<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><title>煦暖曆落地頁 v13</title><style>{CSS}</style></head><body>{body}</body></html>'
+html = f'<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><title>煦暖曆落地頁 v14</title><style>{CSS}</style></head><body>{body}</body></html>'
 open(f'{D}/page.html', 'w').write(html)
 print('ok', len(html))
