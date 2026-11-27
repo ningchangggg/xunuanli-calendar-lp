@@ -160,8 +160,8 @@ def pin():
 
 def s03():
     clips = {1: 'x_wallq2', 2: 'x_q3'}
-    out = '''<section id="s03"><header><div class="sign">煦暖書店　本週選書</div><div class="eyebrow">誰適合煦暖曆？</div>
-<h2>店員推薦：<br>今年最好送的一本</h2><div class="lead">365 位作家，一天一頁。<br>給愛讀的人、累了的人，也給你想謝謝的人。</div></header><div class="shelf">'''
+    out = '''<section id="s03"><header><div class="eyebrow">誰適合煦暖曆？</div>
+<h2>適合充滿愛的你</h2><div class="lead">365 位作家，一天一頁。<br>給愛讀的人、累了的人，也給你想謝謝的人。</div></header><div class="shelf">'''
     for i, x in enumerate(C):
         m, d = x['md'].split('.')
         if i:
@@ -246,6 +246,6 @@ body = s03() + f'''
 <div class="tx2"><div class="a">每天一句，<br>剛好接住今天的你</div><div class="b">日子不一定順，<br>但每天早上，都有人先對你說聲早安。</div></div>
 <div class="nx">找不到要送什麼的時候，<br>就送一整年的好句子。<div class="tg">明天，還有一位作家在等你</div></div></section>
 '''
-html = f'<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><title>煦暖曆落地頁 v14</title><style>{CSS}</style></head><body>{body}</body></html>'
+html = f'<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><title>煦暖曆落地頁 v15</title><style>{CSS}</style></head><body>{body}</body></html>'
 open(f'{D}/page.html', 'w').write(html)
 print('ok', len(html))
